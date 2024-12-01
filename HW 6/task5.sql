@@ -35,3 +35,11 @@ SELECT cust_name, AVG(bill_total) AS avg_spent
 FROM restBill
 GROUP BY cust_name
 HAVING AVG(bill_total) > 400;
+
+-- 6 
+
+SELECT s.first_name, s.surname, COUNT(*) AS num_bills
+FROM restBill b
+JOIN restStaff s ON b.waiter_no = s.staff_no
+GROUP BY s.first_name, s.surname, b.bill_date
+HAVING COUNT(*) >= 3;
