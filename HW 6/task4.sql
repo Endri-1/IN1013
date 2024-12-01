@@ -11,7 +11,7 @@ AND EXISTS (
       FROM restStaff
       WHERE first_name = 'Charles'
     )
-)
+);
 
 -- 2 
 SELECT first_name, surname
@@ -20,7 +20,8 @@ WHERE staff_no = (
     SELECT headwaiter
     FROM restRoom_management
     JOIN restBill ON room_date = bill_date
-    WHERE cust_name = 'Nerida Smith' AND bill_date = 160111);
+    WHERE cust_name = 'Nerida Smith' AND bill_date = 160111
+);
 
 -- 3 
 SELECT cust_name

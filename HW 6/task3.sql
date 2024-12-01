@@ -16,7 +16,8 @@ FROM restStaff
 WHERE headwaiter = (
     SELECT headwaiter
     FROM restStaff
-    WHERE first_name = 'Zoe' AND surname = 'Ball');
+    WHERE first_name = 'Zoe' AND surname = 'Ball'
+);
 
 -- 4 
 SELECT cust_name, bill_total, first_name, surname AS waiter_name
