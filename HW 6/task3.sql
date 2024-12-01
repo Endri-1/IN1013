@@ -37,17 +37,4 @@ SELECT DISTINCT table_no
 FROM restBill 
 WHERE bill_no IN (00014, 00017));
 
--- 6 
-
-SELECT DISTINCT first_name, surname
-FROM restStaff 
-WHERE staff_no IN (
-    SELECT DISTINCT waiter_no
-    FROM restBill
-    JOIN restRest_table ON table_no = table_no
-    WHERE room_name = 'Blue' AND bill_date = 160312
-)
-OR staff_no = (
-    SELECT headwaiter
-    FROM restRoom_management
-    WHERE room_name = 'Blue' AND room_date = 160312);
+-- 6
