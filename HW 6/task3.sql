@@ -19,7 +19,7 @@ WHERE headwaiter = (
     WHERE first_name = 'Zoe' AND surname = 'Ball');
 
 -- 4 
-SELECT cust_name, bill_total, first_name || ' ' || surname AS waiter_name
+SELECT cust_name, bill_total, first_name, surname AS waiter_name
 FROM restBill 
 JOIN restStaff ON waiter_no = staff_no
 ORDER BY bill_total DESC;
@@ -32,7 +32,8 @@ SELECT DISTINCT first_name, surname
     WHERE table_no IN (
 SELECT DISTINCT table_no
 FROM restBill 
-WHERE bill_no IN (00014, 00017));
+WHERE bill_no IN (00014, 00017)
+);
 
 -- 6
 

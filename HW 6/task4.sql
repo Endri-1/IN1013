@@ -1,5 +1,4 @@
 -- 1 
-
 SELECT cust_name
 FROM restBill
 WHERE bill_total > 450.00
@@ -15,7 +14,6 @@ AND EXISTS (
 )
 
 -- 2 
-
 SELECT first_name, surname
 FROM restStaff
 WHERE staff_no = (
@@ -25,7 +23,6 @@ WHERE staff_no = (
     WHERE cust_name = 'Nerida Smith' AND bill_date = 160111);
 
 -- 3 
-
 SELECT cust_name
 FROM restBill
 WHERE bill_total = (
@@ -34,7 +31,6 @@ WHERE bill_total = (
 );
 
 -- 4 
-
 SELECT first_name, surname
 FROM restStaff
 WHERE staff_no NOT IN (
@@ -43,7 +39,6 @@ WHERE staff_no NOT IN (
 );
 
 -- 5
-
 SELECT b.cust_name, s.first_name AS headwaiter_first_name, s.surname AS headwaiter_surname, t.room_name
 FROM restBill b
 JOIN restRest_table t ON b.table_no = t.table_no
