@@ -25,7 +25,6 @@ JOIN restStaff ON waiter_no = staff_no
 ORDER BY bill_total DESC;
 
 -- 5 
-
 SELECT DISTINCT first_name, surname
     FROM restStaff 
     JOIN restBill ON staff_no = waiter_no
@@ -36,7 +35,6 @@ WHERE bill_no IN (00014, 00017)
 );
 
 -- 6
-
 SELECT DISTINCT s.first_name, s.surname
 FROM restStaff s
 WHERE s.staff_no IN (
